@@ -1,0 +1,716 @@
+:root {
+  /* ============================================
+     COLORES CORPORATIVOS - SOFIS
+     ============================================ */
+  --sofis-primary: #1a3c5e;
+  --sofis-primary-light: #2d5a8a;
+  --sofis-primary-dark: #0f2440;
+  --sofis-secondary: #4a90d9;
+  --sofis-accent: #f5a623;
+  --sofis-success: #27ae60;
+  --sofis-danger: #e74c3c;
+  --sofis-warning: #f39c12;
+  --sofis-info: #3498db;
+  
+  /* ============================================
+     COLORES DE FONDO Y TEXTOS
+     ============================================ */
+  --sofis-bg-main: #f4f6f9;
+  --sofis-bg-white: #ffffff;
+  --sofis-bg-card: #ffffff;
+  --sofis-bg-sidebar: #1a3c5e;
+  --sofis-bg-hover: #e8ecf0;
+  
+  --sofis-text-primary: #2c3e50;
+  --sofis-text-secondary: #7f8c8d;
+  --sofis-text-light: #ffffff;
+  --sofis-text-muted: #95a5a6;
+  
+  /* ============================================
+     BORDES Y SOMBRAS
+     ============================================ */
+  --sofis-border: #dde1e7;
+  --sofis-border-radius: 8px;
+  --sofis-border-radius-sm: 4px;
+  --sofis-border-radius-lg: 12px;
+  --sofis-shadow-sm: 0 2px 4px rgba(0,0,0,0.08);
+  --sofis-shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+  --sofis-shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+  
+  /* ============================================
+     ESPACIADOS
+     ============================================ */
+  --sofis-spacing-xs: 0.25rem;
+  --sofis-spacing-sm: 0.5rem;
+  --sofis-spacing-md: 1rem;
+  --sofis-spacing-lg: 1.5rem;
+  --sofis-spacing-xl: 2rem;
+  --sofis-spacing-xxl: 3rem;
+  
+  /* ============================================
+     FUENTES
+     ============================================ */
+  --sofis-font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --sofis-font-size-xs: 0.75rem;
+  --sofis-font-size-sm: 0.875rem;
+  --sofis-font-size-base: 1rem;
+  --sofis-font-size-lg: 1.125rem;
+  --sofis-font-size-xl: 1.25rem;
+  --sofis-font-size-xxl: 1.5rem;
+  
+  /* ============================================
+     TRANSICIONES
+     ============================================ */
+  --sofis-transition: all 0.3s ease;
+}
+
+/* ============================================
+   RESET Y ESTILOS GLOBALES
+   ============================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--sofis-font-family);
+  background-color: var(--sofis-bg-main);
+  color: var(--sofis-text-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--sofis-text-primary);
+}
+
+a {
+  color: var(--sofis-secondary);
+  text-decoration: none;
+  transition: var(--sofis-transition);
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--sofis-bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--sofis-text-muted);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--sofis-text-secondary);
+}
+
+/* ============================================
+   HEADER - SOFIS
+   ============================================ */
+.sofis-header {
+  background: linear-gradient(135deg, var(--sofis-primary) 0%, var(--sofis-primary-dark) 100%);
+  color: var(--sofis-text-light);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--sofis-shadow-md);
+}
+
+.sofis-header__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--sofis-spacing-md) var(--sofis-spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--sofis-spacing-xl);
+}
+
+.sofis-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-sm);
+  text-decoration: none;
+  color: var(--sofis-text-light);
+}
+
+.sofis-header__logo {
+  width: 45px;
+  height: 45px;
+  background: var(--sofis-accent);
+  border-radius: var(--sofis-border-radius);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--sofis-primary);
+  box-shadow: var(--sofis-shadow-sm);
+}
+
+.sofis-header__brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.sofis-header__brand-name {
+  font-size: var(--sofis-font-size-xl);
+  font-weight: 700;
+  letter-spacing: 2px;
+  line-height: 1.2;
+}
+
+.sofis-header__brand-tagline {
+  font-size: var(--sofis-font-size-xs);
+  opacity: 0.8;
+  letter-spacing: 1px;
+}
+
+.sofis-header__menu-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  padding: var(--sofis-spacing-sm);
+  cursor: pointer;
+}
+
+.sofis-header__menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background-color: var(--sofis-text-light);
+  border-radius: 2px;
+  transition: var(--sofis-transition);
+}
+
+.sofis-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-sm);
+  flex: 1;
+  justify-content: center;
+}
+
+.sofis-header__nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-xs);
+  padding: var(--sofis-spacing-sm) var(--sofis-spacing-md);
+  color: var(--sofis-text-light);
+  text-decoration: none;
+  border-radius: var(--sofis-border-radius);
+  font-size: var(--sofis-font-size-sm);
+  font-weight: 500;
+  transition: var(--sofis-transition);
+  white-space: nowrap;
+}
+
+.sofis-header__nav-link:hover, .sofis-header__nav-link:active {
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--sofis-text-light);
+}
+
+.sofis-header__nav-link.router-link-active {
+  background: rgba(255, 255, 255, 0.2);
+  font-weight: 600;
+}
+
+.sofis-header__nav-icon {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.sofis-header__user-section {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-lg);
+}
+
+.sofis-header__user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  text-align: right;
+}
+
+.sofis-header__user-name {
+  font-size: var(--sofis-font-size-sm);
+  font-weight: 600;
+}
+
+.sofis-header__user-role {
+  font-size: var(--sofis-font-size-xs);
+  opacity: 0.8;
+  background: var(--sofis-accent);
+  color: var(--sofis-primary);
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.sofis-header__logout-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-xs);
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--sofis-text-light);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  padding: var(--sofis-spacing-sm) var(--sofis-spacing-md);
+  border-radius: var(--sofis-border-radius);
+  font-size: var(--sofis-font-size-sm);
+  cursor: pointer;
+  transition: var(--sofis-transition);
+}
+
+.sofis-header__logout-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: currentColor;
+  stroke-width: 2;
+  fill: none;
+}
+
+.sofis-header__logout-btn:hover {
+  background: var(--sofis-danger);
+  border-color: var(--sofis-danger);
+}
+
+/* ============================================
+   FOOTER - SOFIS
+   ============================================ */
+.sofis-footer {
+  background: linear-gradient(135deg, var(--sofis-primary-dark) 0%, var(--sofis-primary) 100%);
+  color: var(--sofis-text-light);
+  padding: var(--sofis-spacing-xl) 0;
+  margin-top: auto;
+}
+
+.sofis-footer__container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--sofis-spacing-xl);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sofis-spacing-lg);
+}
+
+.sofis-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sofis-spacing-xs);
+}
+
+.sofis-footer__brand-name {
+  font-size: var(--sofis-font-size-lg);
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.sofis-footer__copyright {
+  font-size: var(--sofis-font-size-xs);
+  opacity: 0.7;
+}
+
+.sofis-footer__links {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-md);
+}
+
+.sofis-footer__link {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-sm);
+  color: var(--sofis-text-light);
+  text-decoration: none;
+  padding: var(--sofis-spacing-sm) var(--sofis-spacing-md);
+  border-radius: var(--sofis-border-radius);
+  background: rgba(255, 255, 255, 0.1);
+  transition: var(--sofis-transition);
+  font-size: var(--sofis-font-size-sm);
+}
+
+.sofis-footer__link:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--sofis-accent);
+}
+
+.sofis-footer__icon {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+.sofis-footer__credits {
+  font-size: var(--sofis-font-size-sm);
+  opacity: 0.9;
+}
+
+.sofis-footer__omer-link {
+  color: var(--sofis-accent);
+  font-weight: 600;
+  text-decoration: none;
+  transition: var(--sofis-transition);
+}
+
+.sofis-footer__omer-link:hover {
+  color: var(--sofis-text-light);
+  text-decoration: underline;
+}
+
+/* ============================================
+   ESTILOS COMPARTIDOS PARA LISTAS - SOFIS
+   ============================================ */
+.sofis-list {
+  background: var(--sofis-bg-white);
+  border-radius: var(--sofis-border-radius-lg);
+  padding: var(--sofis-spacing-xl);
+  box-shadow: var(--sofis-shadow-sm);
+  overflow: hidden;
+}
+
+.sofis-list__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--sofis-spacing-xl);
+  flex-wrap: wrap;
+  gap: var(--sofis-spacing-md);
+}
+
+.sofis-list__title {
+  display: flex;
+  align-items: center;
+  gap: var(--sofis-spacing-md);
+  font-size: var(--sofis-font-size-xxl);
+  font-weight: 700;
+  color: var(--sofis-primary);
+  margin: 0;
+}
+
+.sofis-list__title-icon {
+  width: 32px;
+  height: 32px;
+  stroke: var(--sofis-primary);
+  stroke-width: 2;
+  fill: none;
+}
+
+.sofis-list__actions {
+  display: flex;
+  gap: var(--sofis-spacing-sm);
+}
+
+.sofis-list__alert {
+  padding: var(--sofis-spacing-md) var(--sofis-spacing-lg);
+  border-radius: var(--sofis-border-radius);
+  margin-bottom: var(--sofis-spacing-lg);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--sofis-font-size-sm);
+  font-weight: 500;
+}
+
+.sofis-list__alert--error {
+  background: #fef2f2;
+  color: #dc2626;
+  border: 1px solid #fecaca;
+}
+
+.sofis-list__alert--success {
+  background: #f0fdf4;
+  color: #16a34a;
+  border: 1px solid #bbf7d0;
+}
+
+.sofis-list__alert__close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0;
+  line-height: 1;
+}
+
+.sofis-list__form {
+  background: var(--sofis-bg-main);
+  padding: var(--sofis-spacing-xl);
+  border-radius: var(--sofis-border-radius);
+  margin-bottom: var(--sofis-spacing-xl);
+  border: 1px solid var(--sofis-border);
+}
+
+.sofis-list__form-title {
+  font-size: var(--sofis-font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--sofis-spacing-lg);
+  color: var(--sofis-primary);
+}
+
+.sofis-list__form-group {
+  margin-bottom: var(--sofis-spacing-md);
+}
+
+.sofis-list__label {
+  display: block;
+  font-size: var(--sofis-font-size-sm);
+  font-weight: 600;
+  margin-bottom: var(--sofis-spacing-xs);
+  color: var(--sofis-text-secondary);
+}
+
+.sofis-list__label span {
+  color: var(--sofis-danger);
+}
+
+.sofis-list__input, .sofis-list__select {
+  display: block;
+  width: 100%;
+  padding: var(--sofis-spacing-sm) var(--sofis-spacing-md);
+  border: 1px solid var(--sofis-border);
+  border-radius: var(--sofis-border-radius);
+  font-size: var(--sofis-font-size-base);
+  font-family: var(--sofis-font-family);
+  transition: var(--sofis-transition);
+  background: var(--sofis-bg-white);
+}
+
+.sofis-list__input:focus, .sofis-list__select:focus {
+  outline: none;
+  border-color: var(--sofis-secondary);
+  box-shadow: 0 0 0 3px rgba(74, 144, 217, 0.15);
+}
+
+.sofis-list__input:disabled {
+  background: var(--sofis-bg-main);
+  cursor: not-allowed;
+}
+
+.sofis-list__error-text {
+  color: var(--sofis-danger);
+  font-size: var(--sofis-font-size-xs);
+  margin-top: var(--sofis-spacing-xs);
+  display: block;
+}
+
+.sofis-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  overflow-x: auto;
+  display: block;
+}
+
+.sofis-list__table-head {
+  background: var(--sofis-bg-main);
+}
+
+.sofis-list__table-header {
+  padding: var(--sofis-spacing-md) var(--sofis-spacing-lg);
+  text-align: left;
+  font-size: var(--sofis-font-size-sm);
+  font-weight: 700;
+  color: var(--sofis-text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-bottom: 2px solid var(--sofis-border);
+  white-space: nowrap;
+}
+
+.sofis-list__table-row {
+  border-bottom: 1px solid var(--sofis-border);
+  transition: var(--sofis-transition);
+}
+
+.sofis-list__table-row:hover {
+  background: var(--sofis-bg-hover);
+}
+
+.sofis-list__table-cell {
+  padding: var(--sofis-spacing-md) var(--sofis-spacing-lg);
+  font-size: var(--sofis-font-size-sm);
+  vertical-align: middle;
+}
+
+.sofis-list__actions-cell {
+  display: flex;
+  gap: var(--sofis-spacing-sm);
+  flex-wrap: wrap;
+}
+
+.sofis-list__badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: var(--sofis-font-size-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.sofis-list__badge--active {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.sofis-list__badge--inactive {
+  background: #fee2e2;
+  color: #dc2626;
+}
+
+.sofis-list__empty {
+  text-align: center;
+  padding: var(--sofis-spacing-xxl);
+  color: var(--sofis-text-muted);
+  font-size: var(--sofis-font-size-base);
+}
+
+/* ============================================
+   BOTONES - SOFIS
+   ============================================ */
+.sofis-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sofis-spacing-sm);
+  padding: var(--sofis-spacing-sm) var(--sofis-spacing-lg);
+  border-radius: var(--sofis-border-radius);
+  font-size: var(--sofis-font-size-sm);
+  font-weight: 600;
+  font-family: var(--sofis-font-family);
+  cursor: pointer;
+  transition: var(--sofis-transition);
+  border: none;
+  text-decoration: none;
+}
+
+.sofis-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sofis-btn--primary {
+  background: var(--sofis-primary);
+  color: var(--sofis-text-light);
+}
+
+.sofis-btn--primary:hover:not(:disabled) {
+  background: var(--sofis-primary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--sofis-shadow-sm);
+}
+
+.sofis-btn--edit {
+  background: var(--sofis-warning);
+  color: white;
+}
+
+.sofis-btn--edit:hover:not(:disabled) {
+  background: #e67e22;
+}
+
+.sofis-btn--delete {
+  background: var(--sofis-danger);
+  color: white;
+}
+
+.sofis-btn--delete:hover:not(:disabled) {
+  background: #c0392b;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 1024px) {
+  .sofis-header__container {
+    padding: var(--sofis-spacing-md);
+  }
+}
+
+@media (max-width: 768px) {
+  .sofis-header__menu-toggle {
+    display: flex;
+    z-index: 1001;
+  }
+
+  .sofis-header__nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--sofis-primary-dark);
+    flex-direction: column;
+    justify-content: center;
+    gap: var(--sofis-spacing-lg);
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1000;
+  }
+
+  .sofis-header__nav--open {
+    transform: translateX(0);
+  }
+
+  .sofis-header__nav-link {
+    font-size: var(--sofis-font-size-lg);
+    padding: var(--sofis-spacing-md) var(--sofis-spacing-xl);
+    justify-content: center;
+  }
+
+  .sofis-header__user-info {
+    display: none;
+  }
+
+  .sofis-footer__container {
+    flex-direction: column;
+    text-align: center;
+    padding: 0 var(--sofis-spacing-md);
+  }
+
+  .sofis-footer__brand {
+    align-items: center;
+  }
+
+  .sofis-list {
+    padding: var(--sofis-spacing-md);
+  }
+
+  .sofis-list__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .sofis-list__title {
+    font-size: var(--sofis-font-size-xl);
+  }
+
+  .sofis-list__form {
+    padding: var(--sofis-spacing-md);
+  }
+}
+
+@media (max-width: 480px) {
+  .sofis-list__actions-cell {
+    flex-direction: column;
+  }
+}
