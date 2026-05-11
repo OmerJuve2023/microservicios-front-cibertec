@@ -56,10 +56,10 @@ import { LoginRequest } from '../../models/auth.model';
           </div>
         </form>
 
-        <div class="sofis-login__footer">
+        <!--<div class="sofis-login__footer">
           <div class="sofis-login__divider"></div>
           <p>Desarrollado por <a href="https://github.com/OmerJuve2023" target="_blank">Omer y sus amigos</a></p>
-        </div>
+        </div>-->
       </div>
     </div>
   `,
